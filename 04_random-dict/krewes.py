@@ -1,11 +1,13 @@
 """
 Aidan Wong
-Elmos_Cheez-it
+Elmos Cheez-it
 SoftDev
-K04 -- Finding and returning random element in dictionary
-2024-
-time spent: 
+K04 -- Python dictionairies and random selection
+2024-09-13
+time spent: 0.33
 """
+
+import random
 
 krewes = {
            4: [ 
@@ -21,3 +23,13 @@ krewes = {
 		'JESSICA','JACKIE','WEN YUAN','YINWEI','TIFFANY','JAYDEN DANIEL','PRINCEDEN' 
 			]
         }
+
+keys = list(krewes.keys())
+#print(keys)
+
+randKey = keys[random.randint(0, len(keys) - 1)]
+#print(krewes.get(randKey))
+names = krewes.get(randKey)
+
+randDevo = names[random.randint(0, len(names) - 1)]
+print(randDevo)
