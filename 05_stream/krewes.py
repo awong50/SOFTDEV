@@ -6,6 +6,7 @@ K05 -- Bitstream
 2024-09-17
 time spent: 0.5
 """
+
 import random
 
 f = open("krewess.txt", "r")
