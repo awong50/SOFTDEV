@@ -10,15 +10,15 @@ time spent: 0.5
 import random
 
 f = open("krewess.txt", "r")
-people = f.read().replace("\n", "").split('@@@')
+people = f.read().replace("\n", "").split('@@@') # Splitting this way has issues with intended values of @ and $, .split() can be used instead of .replace()
 people = people[:len(people)-1]
-for count, person in enumerate(people):
-    people[count] = person.split('$$$')
-    people[count] = {"period":people[count][0], "devo":people[count][1], "ducky":people[count][2]}
+for count, person in enumerate(people): # Enumerate works as the counter
+    people[count] = person.split('$$$') 
+    people[count] = {"period":people[count][0], "devo":people[count][1], "ducky":people[count][2]} # Add dictionary to people list at count
 
-randoDevo = random.randint(0, len(people)-1)
+randoDevo = random.randint(0, len(people)-1) # Select random existing position from people list
 
-print("Name: " + people[randoDevo].get("devo") + " | Period: " + people[randoDevo].get("period") + " | Ducky: " + people[randoDevo].get("ducky"))
+print("Name: " + people[randoDevo].get("devo") + " | Period: " + people[randoDevo].get("period") + " | Ducky: " + people[randoDevo].get("ducky")) # Final print statement to get random devo information
 
 """
 print(people)
