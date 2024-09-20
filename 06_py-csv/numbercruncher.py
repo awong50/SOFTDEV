@@ -13,6 +13,29 @@ QCC: First and last items don't go into dictionary; Commas appear in quotations 
 HOW THIS SCRIPT WORKS: Read occupations.csv and assign it to "data", stripping it and splitting it by new line; Iterate through "data" and replace commas inside quotations with "<>" to preserve them; Iterate through "data" again, splitting it by commas to get the key and value (the key being the occupation name and the value being the weight), after splitting replace "<>" with commas and quotes with empty strings, finally adding it to the dictionary and appending the weight value to a weights list, Randomly select random occupation (either with random.choices() or custom method below), print random occupation
 """
 
+# OPTIMIZED CODE AFTER DEMOS
+
+import random
+
+with open("occupations.csv") as file: # Open file with this method so it closes by itself
+    data = file.read().strip().split("\n")
+
+occupation = {}
+weights = []
+
+for i in range(1, len(data)-1):
+    splitted = data[i].rsplit(",", 1) # Split by first comma from the right 
+    splitted[0] = splitted[0].replace('"', "") # Remove quotes if present
+    occupation[splitted[0]] = splitted[1] # Add to dictionary
+    weights.append(float(splitted[1])) # Append weight value to weight list
+
+randO = random.choices(list(occupation), weights, k=1)
+
+print("Random Occupation: " + str(randO[0]) + " | " + "Occupation Weight: " + occupation[str(randO[0])])
+
+# ORIGINAL CODE
+"""
+
 import random
 
 with open("occupations.csv") as file: # Open file with this method so it closes by itself
@@ -49,10 +72,6 @@ for i in range (0, 1000): # Inside a for loop to do many testings quickly
     print(randO)
  
 
-"""" 
-Method using random.choices
+"""
 
-randO = random.choices(list(occupation), weights=weight, k=500)
 
-print(randO)
-"""   
