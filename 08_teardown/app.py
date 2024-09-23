@@ -4,26 +4,27 @@ Elmos_Cheez-it
 SoftDev
 K08 -- Flask
 2024-09-29
-time spent:
+time spent: 0.5
 """
 
 '''
 DISCO:
-<note any discoveries you made here... no matter how small!>
+0. Returning strings in functions cause it to be sent to the HTML of the flask page. (base output language is HTML)
+1. Flask can only be run on local machines
+2. Flask behaves like an object in other langauges
+3. app.route functions similarly to href in HTML
 
 QCC:
-0. 
-1. 
-2. 
-3. 
-4. 
-5. 
+0. What does "name" stand for?
+1. Why does "print(__name__)" print "__main__"
+2. How was "__name__" defined?
+3. Can Flask be made to run on other computers?
+4. Does "app.route" route all functions under it or just the one directly under it?
+5. How does flask create these developmental servers?
  ...
 
 INVESTIGATIVE APPROACH:
-<Your concise summary of how
- you and your team set about
- "illuminating the cave of ignorance" here...>
+We looked at the code, ran it on our local machines, and observed the impacts of what happens. We also used the internet for identifying things we didn't understand.
 '''
 
 
