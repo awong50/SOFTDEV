@@ -1,16 +1,16 @@
 ## K11: Notes
 
-###Aidan Wong
+### Aidan Wong
 
-###Elmos_Cheez-its
+### Elmos_Cheez-its
 
-###SoftDev
+### SoftDev
 
-###K11 - Static Flask Pages
+### K11 - Static Flask Pages
 
-###2024-09-25
+### 2024-09-25
 
-###time spent: 0.1
+### time spent: 0.1
 
 **Flask**
 
