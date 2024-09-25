@@ -1,36 +1,37 @@
-## K11: Some Things Never Change
-### Due: 2024-09-26r before class
+### K11: Notes
 
-Your Trio Mission:
+Aidan Wong
+Elmos_Cheez-its
+SoftDev
+K11 - Static Flask Pages
+2024-09-25
+time spent: 0.1
 
-1. In a new directory in your workshop, save a copy of the demo for using flask to serve static files.
-1. As a team...
-  - Familiarize yourself with the app directory structure and the files' content.
-  - Note anything notable.
-  - Predict expected behaviors.
-  - Spin up your website on localhost and reconcile behavior with prediction.
-  - Record your notes in `readme` in app's root directory.
-1. Once your team has done this, compose and store another html file named `fixie.html` (containing some html to render your team name and roster) so that flask can serve it staticly.
+**Flask**
+Module to development server (opens in web browsers)
 
-<br>
+print() -> Console (Helpful and commonly used for debugging)
+return -> WWW (Sends it to the HTML)
 
-DELIVERABLES:
-* Save to workshop as indicated.
-* Each teammate should submit matching sourcecode.
+@app.route("/") -> Decorator, joined with the below function (when root is requested in the URL by a user, foo runs)
+def foo()...
 
-```
-path/to/myworkshop$ tree 11_flask-static
-.
-├── app.py
-├── readme
-└── static
-    ├── foo
-    ├── foo.html
-    └── fixie.html
-```
+**Manging many python files**
+if \__name__ == "\__main__":  
+    app.debug = True        
+    app.run()
 
-<br>
+- Only runs a python script if it is the "driver"
+- Prevents the chaos of many python scripts running at once
+- Allows the seperation of computation functions from webserver code
+- Main file 'A', Imported files 'B', 'C', and 'D'
 
-[related](https://ukulelemagazine.com/lessons/uke-lesson-3-chords-and-the-truth-country-songwriting-legend-harlan-howard)  
-[related](https://en.wikipedia.org/wiki/Plain_text)  
 
+**Newline**
+'/n' -> Works in plaintext contexts
+<\br> -> Works in HTML contexts
+
+**"foo" behavior**
+We noticed that accessing http://localhost:5000/static/foo does not have any text on the webpage. We predicted that nothing would happen since there is no code for the program to read or run.
+
+However, when the HTML file is run, "Is this plaintext, though?" is displayed on the local webpage. We predicted that the page would generate the text since the document type and html tags were properly included (and closed).
