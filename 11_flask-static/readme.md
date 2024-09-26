@@ -1,6 +1,6 @@
 ## K11: Notes
 
-**Flask**
+### Flask
 
 Module to development server (opens in web browsers)
 
@@ -10,11 +10,13 @@ return -> WWW (Sends it to the HTML)
 @app.route("/") -> Decorator, joined with the below function (when root is requested in the URL by a user, foo runs)
 def foo()...
 
-**Manging many python files**
+### Manging many python files
 
-if \__name__ == "\__main__":  
+```
+if __name__ == "__main__":  
     app.debug = True        
     app.run()
+```
 
 - Only runs a python script if it is the "driver"
 - Prevents the chaos of many python scripts running at once
@@ -22,12 +24,12 @@ if \__name__ == "\__main__":
 - Main file 'A', Imported files 'B', 'C', and 'D'
 
 
-**Newline**
+### Newline
 
 '/n' -> Works in plaintext contexts
 <\br> -> Works in HTML contexts
 
-**"foo" behavior**
+### "foo" file behavior
 
 We noticed that accessing http://localhost:5000/static/foo does not have any text on the webpage. We predicted that nothing would happen since there is no code for the program to read or run.
 
