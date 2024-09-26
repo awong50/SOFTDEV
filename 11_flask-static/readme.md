@@ -7,8 +7,10 @@ Module to development server (opens in web browsers)
 print() -> Console (Helpful and commonly used for debugging)
 return -> WWW (Sends it to the HTML)
 
-@app.route("/") -> Decorator, joined with the below function (when root is requested in the URL by a user, foo runs)
+```
+@app.route("/") # Decorator, joined with the below function (when root is requested in the URL by a user, foo runs)
 def foo()...
+```
 
 ### Manging many python files
 
