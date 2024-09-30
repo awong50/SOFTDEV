@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>wdywtbwygp</title>
+    <style>
+      table {{
+        border-collapse: collapse;
+          }}
+        th, td {{
+          border: 1px solid black;
+          padding: 8px;
+        }}
+        td:nth-child(2) {{
+          text-align: center;
+        }}
+      </style>
+  </head>
+  <body>
+    <h1>K13: Occupation Randomizer</h1>
+    <p>Your random occupation is: {{random_occupation}}. Here's a helpful starting resource {{resource}}.</p>
+    <table>
+      <tr>
+        <th>Occupations</th>
+        <th>Weights (%)</th>
+      </tr>
+      {% for item in %}
+  </body>
+</html>
