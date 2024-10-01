@@ -1,0 +1,7 @@
+Noteable Notes:
+1. Easier to store resources and weights in a dictionary for clarity and efficency (Super helpful that dictionary finds key values in constant time)
+2. Jinja2 makes it easy to fuse HTML and variables
+3. target="_blank" allows you to make a link open in a new tab when it is clicked
+
+EGO:
+Nothing yet...

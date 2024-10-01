@@ -2,28 +2,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>wdywtbwygp</title>
+    <title>Job Simulator</title>
     <style>
-      table {{
-        border-collapse: collapse;
-          }}
-        th, td {{
-          border: 1px solid black;
-          padding: 8px;
-        }}
-        td:nth-child(2) {{
+      table {
+          border-collapse: collapse; 
+      }
+      th, td {
+          border: 1px solid black; 
+          padding: 8px; 
+      }
+      td:nth-child(2) {
           text-align: center;
-        }}
-      </style>
+      }
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+      a:hover {
+        color: red;
+      }
+      a :visited {
+        color: blue;
+      }
+  </style>
   </head>
   <body>
     <h1>K13: Occupation Randomizer</h1>
-    <p>Your random occupation is: {{random_occupation}}. Here's a helpful starting resource {{resource}}.</p>
+    <h3>Team Fire Hydrant: Aidan Wong, Amanda Tan</h3>
+    <p>Your random occupation is: {{random_occupation}}.</p>
+    <p>Here's a helpful starting resource: <a href="{{ resource }}" target="_blank">{{ resource }}</a></p>
+    <a href="/">Return to the Firestation</a>
+    <br>
+    <br>
     <table>
       <tr>
         <th>Occupations</th>
         <th>Weights (%)</th>
+        <th>Helpful Starting Resource</th>
       </tr>
-      {% for item in %}
+      {% for occupation, data in occupations_dict.items()%}
+        <tr>
+          <td>{{ occupation }}</td>
+          <td>{{ data['weight'] }}</td>
+          <td><a href="{{ data['resource'] }}" target="_blank">{{data['resource']}}</a></td>
+        </tr>
+      {% endfor %}
   </body>
 </html>
