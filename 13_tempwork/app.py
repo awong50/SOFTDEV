@@ -1,3 +1,11 @@
+"""
+Fire Hydrant: Aidan Wong, Amanda Tan
+SoftDev
+K13 - Templating with Random Occupation
+2024-09-30
+time spent: 1.0
+"""
+
 from flask import Flask, render_template
 import random
 app = Flask(__name__)
