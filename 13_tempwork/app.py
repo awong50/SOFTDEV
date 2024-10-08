@@ -11,8 +11,8 @@ import random
 app = Flask(__name__)
 
 @app.route("/")
-def index():
-    return render_template('index.html')
+def hello_world():
+    return "No hablo queso!"
 
 @app.route("/wdywtbwygp")
 def test_tmplt():
