@@ -1,25 +1,12 @@
-< your heading here >
+Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+SoftDev
+K15 - Flask Inputs With Different Requests
+2024-10-08
+time spent: 0.8
 
-DISCO:
-* 
-* 
-* 
------------------------------------------------------------------------
-
-
-Q/C/C:
-* 
-* 
-* 
------------------------------------------------------------------------
-
-
-OTHER?
-* 
-* 
-* 
------------------------------------------------------------------------
-
+* POST causes a form resubmission confirmation, while GET does not
+* POST uses request.form, while GET uses request.args
+* Information submitted with POST dosen't appear in URL, but does when submitted with GET
 
 
 
