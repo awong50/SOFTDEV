@@ -15,6 +15,7 @@ time spent: 1.0
 * Login is login screen, Response is logged in state homepage, logout is a confirmation screen for logging out
 * If secret_key is not set, there will be a runtime error when attempting to create and use sessions (sessions require a secret_key)
 * Usernames and passwords are case sensitive (Makes passwords more secure, but usernames more inconvenient)
+* Flask allows you to import a session object, which behaves like a dictionary. It allows you to store specific data across HTTP requests. 
 
 
 
