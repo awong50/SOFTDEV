@@ -16,7 +16,7 @@ time spent: 1.0
 * If secret_key is not set, there will be a runtime error when attempting to create and use sessions (sessions require a secret_key)
 * Usernames and passwords are case sensitive (Makes passwords more secure, but usernames more inconvenient)
 * Flask allows you to import a session object, which behaves like a dictionary. It allows you to store specific data across HTTP requests. 
-
+* Is it possible for a user to do malicous things with the value in the session key (that appears when checking the cookies in the local storage through the inspect tool in the browser)
 
 
 
