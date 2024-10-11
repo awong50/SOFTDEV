@@ -38,6 +38,9 @@ def disp_loginpage():
         
         return redirect('/') # Used to remove the confirm form resubmission pop up when page is refreshed after entering incorrect data
     
+
+    if 'session_id' in session:
+        return redirect('/home')
     return render_template('login.html')
     
 
