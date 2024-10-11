@@ -20,13 +20,14 @@
             You came into my house using the POST method. <br><br>
             This method sends data submits data through the "request body", which is why the method required to request a paramater uses request.form.get instead of request.args.get (which is what GET uses).  <br><br>
             If you used the GET method to enter, the only visible difference would be that the information you submitted would be visibile in the URL, shown after the "?". This is because the GET method sends data through the URL as query parameters (which is the stuff after the "?"). <br><br>
+            The POST method is considered more friendly to use than the GET method since it has a large data length limit at nearly infinite (2MB) and it hides possibly sensitive data from the URL so you won't need to worry about data size and encoding values. <br><br>
             Notice how a form resubmission confirmation pop up appears when this page is refreshed. This is due to the POST request, which relies on the dynamic information in the request body, and needs the data to be re-entered into the request body to be used. GET dosen't need this because the data is static inside the URL. 
         </p>
     {% else %}
         <h3>Hi {{name}}! I'm Elmo!</h3>
         <p>
             You came into my house using the GET method. <br><br>
-            This method sends data through the URL as query paramaters (things that appear after the ?), meaning that all the information you submitted in the form on the landing page is visible in the URL. <br><br>
+            This method sends data through the URL as query paramaters (things that appear after the ?), meaning that all the information you submitted in the form on the landing page is visible in the URL. Sadly, this also has a character limit at 2048 character.<br><br>
             If you used the POST method to enter, the only visible difference would be that the information you submitted is no longer visibile in the URL. This is because POST submits data through the "request body", which is why the method required to request a paramater uses request.form.get instead of request.args.get (which is what GET uses).
             
         </p>
