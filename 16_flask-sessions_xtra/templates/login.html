@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 
+    Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
+    SoftDev
+    K16 - Flask Sessions
+    2024-10-09
+    time spent: 1.0
+ -->
+
+
+<html>
+
+  <head>
+    <title> Elmo's Door </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+  </head>
+
+  <body>
+    <h1>
+      Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
+    </h1>
+    <h3>
+      Sign Up
+    </h3>
+      <form method="POST">
+        <input type="text" placeholder="Username" name="name">
+        <input type="password" placeholder="Password" name="password">
+        <input type="hidden" name="form_type" value="sign_up">
+        <input type="submit" value="Enter">
+      </form>
+      <p id="errortag">{{errorS}}</p> 
+    <h3>
+      Login
+    </h3>
+    <form method="POST">
+        <input type="text" placeholder="Username" name="name">
+        <input type="password" placeholder="Password" name="password">
+        <input type="hidden" name="form_type" value="sign_in">
+        <input type="submit" value="Enter">
+      </form>
+      <p id="errortag">{{errorL}}</p>
+    <br>
+  </body>
+
+</html>
