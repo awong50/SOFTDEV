@@ -4,21 +4,23 @@ MetalMouths: Aidan Wong, Brian Liu
 SoftDev
 K20 - Foundation CSS Tutorial
 2024-11-13
-time spent: 0.5
+time spent: 1.5
 -->
+
+<!--no-js prevents flashes of unstyled content on page load-->
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation Tutorial</title>
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
-
-    <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <!--Imports the CSS Stylesheet-->
+    <link href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" rel="stylesheet">
   </head>
-  <body>
+
+  <body style="background-color: paleturquoise;  padding: 1rem">
+
+    <!--Top Navigation with dropdown menu and search box-->
     <div class="top-bar" id="example-menu">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
@@ -26,9 +28,9 @@ time spent: 0.5
           <li>
             <a href="#">Wood</a>
             <ul class="menu vertical">
-              <li><a href="#">One</a></li>
-              <li><a href="#">Two</a></li>
-              <li><a href="#">Three</a></li>
+              <li><a href="#">Oak</a></li>
+              <li><a href="#">Pink</a></li>
+              <li><a href="#">Cedar</a></li>
             </ul>
           </li>
           <li><a href="#">Cement</a></li>
@@ -41,50 +43,277 @@ time spent: 0.5
           <li><button type="button" class="button">Search</button></li>
         </ul>
       </div>
-    </div>
+    </div> 
 
-    <div class="row">
-      <div class="columns">
-        <h2>Orbit - Text Slider</h2>
-        <p>A carousel slide can contain images or HTML—you can even mix between slides in one carousel!</p>
+    <!--Tab navigation with collapsing functionality-->
+    <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
+      <li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Tab Summary</a></li>
+      <li class="tabs-title"><a href="#panel2c">Meow</a></li>
+      <li class="tabs-title"><a href="#panel3c">Woof</a></li>
+      <li class="tabs-title"><a href="#panel4c">Boo</a></li>
+    </ul>
+    
+    <div class="tabs-content" data-tabs-content="collapsing-tabs">
+      <div class="tabs-panel is-active" id="panel1c">
+        <p>Tabs can be used to store and condense data. This includes text, images, forms, etc. This tab setup is collapsible, so if you click an open tab, it closes!</p>
+      </div>
+      <div class="tabs-panel" id="panel2c">
+        <img src="https://c.tenor.com/Obrf_cJziQ8AAAAC/tenor.gif">
+      </div>
+      <div class="tabs-panel" id="panel3c">
+        <img src="https://pbs.twimg.com/media/BvBzkm3CQAIN_-3.jpg">
+      </div>
+      <div class="tabs-panel" id="panel4c">
+        <img src="https://media.gettyimages.com/id/1185552380/photo/scary-clown-mask.jpg?s=612x612&w=0&k=20&c=jugetaqVVoog-131Fzm34GeaXx6u2Nyastp8rLTIfuI=">
       </div>
     </div>
-    
-    <div class="row">
-      <div class="columns">
-        <div class="orbit" role="region" aria-label="Favorite Text Ever" data-orbit>
-          <ul class="orbit-container">
-            <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-            <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-            <li class="is-active orbit-slide">
-              <div class="docs-example-orbit-slide">
-                <p><strong>This is dodgerblue.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li class="orbit-slide">
-              <div class="docs-example-orbit-slide">
-                <p><strong>This is rebeccapurple.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li class="orbit-slide">
-              <div class="docs-example-orbit-slide">
-                <p><strong>This is darkgoldenrod.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li class="orbit-slide">
-              <div class="docs-example-orbit-slide">
-                <p><strong>This is lightseagreen.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-          </ul>
-          <nav class="orbit-bullets">
-            <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-            <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-            <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-            <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-          </nav>
+    <br>
+
+    <!--Centered Thumbnail Image using grid container-->
+    <div class="grid-container">
+      <div class="grid-x align-center">
+        <div class="cell small-6 text-center">
+          <img class="thumbnail" src="https://images-ext-1.discordapp.net/external/p0unlfcbw_DOO_u2URePja5Tnwv43AruJCaRr7Zk64E/https/ih1.redbubble.net/image.4318224826.3233/raf%2C360x360%2C075%2Ct%2Cfafafa%3Aca443f4786.jpg?format=webp" alt="Awooo.">
         </div>
       </div>
     </div>
+
+    <!--Accordian to segment information in a nice way-->
+    <ul class="accordion" data-accordion>
+      <!--is-active makes it open on page refresh, otherwise closed-->
+      <li class="accordion-item is-active" data-accordion-item>   
+        <a href="#" class="accordion-title">Accordion Container</a>
+        <div class="accordion-content" data-tab-content>
+          <p>Accordian Containers can present information in a clean list format. Clicking on a tab expands it, and closes whatever tab is open.</p>
+          <a href="https://get.foundation/sites/docs/accordion.html" target="_blank">To the Documentation</a>
+        </div>
+      </li>
+      <!--You can put anything inside these accordion items-->
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Tables</a>
+        <div class="accordion-content" data-tab-content>
+          <p>The classic table reimagined with default styling and the ability to resize columnn widths</p>
+          <!--Styled Table-->
+          <table>
+            <thead>
+              <tr>
+                <th width="200">Lorem Type</th>
+                <th>Lorem Example</th>
+                <th width="150">Word Count</th>
+                <th width="150">Link to Generator</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Baconipsum</td>
+                <td>Bacon ipsum dolor amet porchetta short loin rump tail frankfurter fatback kevin short ribs chislic pork buffalo ball tip pork belly. </td>
+                <td>21</td>
+                <td><a href="https://baconipsum.com/" target="_blank">BACON</td>
+              </tr>
+              <tr>
+                <td>StuyCS Ipsum</td>
+                <td>Stuy CS dolor sit amet support qcc optimize mysterion program geethub fix think: s i m p l e. think: s m a r t. optimize thinking straight program softdevo configure googstuy upgrade uv-radiation-emitting devices support Mouzakitis code nextcs.</td>
+                <td>39</td>
+                <td><a href="https://baconipsum.com/" target="_blank">BIG BRAIN</td>
+              </tr>
+              <tr>
+                <td>Sagan Ipsum</td>
+                <td>The ash of stellar alchemy encyclopaedia galactica with pretty stories for which there's little good evidence stirred by starlight great turbulent clouds bits of moving fluff?</td>
+                <td>26</td>
+                <td><a href="https://saganipsum.com/" target="_blank">COSMIC POWA</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="https://get.foundation/sites/docs/table.html" target="_blank">To the Documentation</a>
+        </div>
+      </li>
+      <li class="accordion-item" data-accordion-item>   
+        <a href="#" class="accordion-title">Forms</a>
+        <div class="accordion-content" data-tab-content>
+          <p>Forms but with more styling and control over box widths and locations.</p>
+          <!--Styled form-->
+          <form>
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                <!--Class names control size-->
+                <div class="medium-6 cell">
+                  <label>Enter your Name
+                    <input type="text" placeholder="Name">
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>Enter your Email
+                    <input type="text" placeholder="Email">
+                  </label>
+                </div>
+                <div class="medium-2 cell">
+                  <label>Homeroom
+                    <select>
+                      <option value="husker">7AA</option>
+                      <option value="starbuck">7BB</option>
+                      <option value="hotdog">7GG</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="small-2 cell">
+                  <label>
+                    Desired GPA?
+                    <input type="number" value="100">
+                  </label>
+                </div>
+                <div class="grid-x grid-padding-x">
+                  <fieldset class="large-6 cell">
+                    <legend>Choose Your Favorite Color</legend>
+                    <input type="radio" name="color" value="Red" id="colorRed" required><label for="colorRed">Red</label>
+                    <input type="radio" name="color" value="Blue" id="colorBlue"><label for="colorBlue">Blue</label>
+                    <input type="radio" name="color" value="Yellow" id="colorYellow"><label for="colorYellow">Yellow</label>
+                  </fieldset>
+                  <fieldset class="large-5 cell">
+                    <legend>Click all that apply</legend>
+                    <input id="checkbox1" type="checkbox"><label for="checkbox1">Student</label>
+                    <input id="checkbox2" type="checkbox"><label for="checkbox2">Teacher</label>
+                    <input id="checkbox3" type="checkbox"><label for="checkbox3">Faculty</label>
+                  </fieldset>
+                </div>
+                <div class="small-30 cell">
+                  <label>
+                    Reason for Grade Boost:
+                    <textarea rows="2" cols="50" placeholder="Write Reason here"></textarea>
+                  </label>
+                  <p class="help-text" id="passwordHelpText">A 650 word personal statement is required for processing.</p>
+                </div>
+              </div>
+            </div>
+          </form>
+          <a href="https://get.foundation/sites/docs/forms.html" target="_blank">To the Documentation</a>
+        </div>
+      </li>
+      <!--Pop ups-->
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Pop Up Modals</a>
+        <div class="accordion-content" data-tab-content>
+          <p>Cool buttons that create pop ups upon clicking</p>
+          <div class="reveal" id="exampleModal1" data-reveal>
+            <h1>Awesome. I Have It.</h1>
+            <p class="lead">Your couch. It is mine.</p>
+            <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <p><button class="button" data-open="exampleModal1">Suprise...</button></p>
+          <a href="https://get.foundation/sites/docs/reveal.html" target="_blank">To the Documentation</a>
+      </li>
+
+      <!--Tooltips (to display unecessary, but helpful information)-->
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Tooltips</a>
+        <div class="accordion-content" data-tab-content>
+          <p>This is useful for expanding on <span data-tooltip aria-haspopup="true" tabindex="1" title="Having hidden meaning; mystifying" data-toggle="tooltip" data-position="top" data-alignment="center">cryptic</span> words without making things ugly.</p>
+          <p>The <span data-tooltip aria-haspopup="true" tabindex="1" title="Fancy word for a beetle." data-toggle="tooltip" data-position="top" data-alignment="center">scarabaeus</span> hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet.</p>
+          <a href="https://get.foundation/sites/docs/tooltip.html" target="_blank">To the Documentation</a>
+      </li>
+
+      <!--A mesh of many different buttons, sliders, and switches-->
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">Control Buttons</a>
+        <div class="accordion-content" data-tab-content>
+          <p>Buttons, buttons, and colored buttons</p>
+          <a class="button primary" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Primary</a>
+          <a class="button secondary" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Secondary</a>
+          <a class="button success" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Success</a>
+          <a class="button alert" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Alert</a>
+          <a class="button warning" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Warning</a>
+
+          <p>Hollow Buttons</p>
+          <button class="hollow button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Primary</button>
+          <button class="hollow button secondary" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Secondary</button>
+          <button class="hollow button success" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Success</button>
+          <button class="hollow button alert" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Alert</button>
+          <button class="hollow button warning" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">Warning</button>
+          <button class="hollow button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" disabled>Disabled</button>
+
+          <p>Disabled Buttons</p>
+          <a class="button disabled" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" aria-disabled>Disabled</a>
+          <button type="button" class="button primary" disabled>Disabled</button>
+          <button type="button" class="button secondary" disabled>Disabled</button>
+          <button type="button" class="button success" disabled>Disabled</button>
+          <button type="button" class="button alert" disabled>Disabled</button>
+          <button type="button" class="button warning" disabled>Disabled</button>
+
+          <p>Dropdown Buttons</p>
+          <button class="dropdown button tiny">Dropdown Button</button>
+          <button class="dropdown button small">Dropdown Button</button>
+          <button class="dropdown button">Dropdown Button</button>
+          <button class="dropdown button large">Dropdown Button</button>
+          <button class="dropdown button expanded">Dropdown Button</button>
+                    
+          <p>Buttons of sizes</p>
+          <a class="button tiny" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">So Tiny</a>
+          <a class="button small" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">So Small</a>
+          <a class="button" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">So Basic</a>
+          <a class="button large" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=0s" target="_blank">So Large</a>
+          <a href="https://get.foundation/sites/docs/button.html" target="_blank">To the Documentation</a>
+
+          <p>Sliders</p>
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-10">
+              <div class="slider" data-slider data-initial-start="50">
+                <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+                <span class="slider-fill" data-slider-fill></span>
+              </div>
+            </div>
+            <div class="cell small-2">
+              <input type="number" id="sliderOutput1">
+            </div>
+          </div>
+
+          <div class="slider vertical" data-slider data-initial-start="25" data-end="200" data-vertical="true">
+            <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+            <span class="slider-fill" data-slider-fill></span>
+            <input type="hidden">
+          </div>
+
+          <p>Switches</p>
+          <div class="switch">
+            <input class="switch-input" id="exampleSwitch" type="checkbox" name="exampleSwitch">
+            <label class="switch-paddle" for="exampleSwitch">
+              <span class="show-for-sr">Download Kittens</span>
+            </label>
+          </div>
+
+          <p>Switches of Size</p>
+          <div class="switch tiny">
+            <input class="switch-input" id="tinySwitch" type="checkbox" name="exampleSwitch">
+            <label class="switch-paddle" for="tinySwitch">
+              <span class="show-for-sr">Tiny Sandwiches Enabled</span>
+            </label>
+          </div>
+          
+          <div class="switch small">
+            <input class="switch-input" id="smallSwitch" type="checkbox" name="exampleSwitch">
+            <label class="switch-paddle" for="smallSwitch">
+              <span class="show-for-sr">Small Portions Only</span>
+            </label>
+          </div>
+          
+          <div class="switch large">
+            <input class="switch-input" id="largeSwitch" type="checkbox" name="exampleSwitch">
+            <label class="switch-paddle" for="largeSwitch">
+              <span class="show-for-sr">Show Large Elephants</span>
+            </label>
+          </div>
+      </li>
+    </ul>
+
+    
+    
+    <!-- Imports JQuery and Foundation JS from CDN to enable scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+    <!--Necessary line to use CSS and scripts-->
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
