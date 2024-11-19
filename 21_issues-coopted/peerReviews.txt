@@ -1,0 +1,75 @@
+Aidan Wong
+SoftDev
+K21 - Peer Reviewing P00
+2024-11-18
+time spent: 0.4
+
+---------------------------------------------------
+Team Indigo
+---------------------------------------------------
+Glow: Very nice commenting throughout the repo, which makes it easy to tell what each part of the code is for. I also like the error handling in the "create_user" function in the "database.py" file and the way you connected the database file.
+
+Grow: In your main Python file, you added HTML text through f-strings, but it would probably be better if you did this using Jinja instead.(the display_stories function is a big one) .
+
+Question: What inspired the complete story button?
+---------------------------------------------------
+
+---------------------------------------------------
+Team DevoCouncil
+---------------------------------------------------
+Glow: Very good commenting to show what code is doing.
+
+Grow: The code could use some cleaning, especially in the blogsearch function query.
+
+Question: Why do you set a variable to username, but not password in the login page logic?
+---------------------------------------------------
+
+---------------------------------------------------
+Team CoolBeans
+---------------------------------------------------
+Glow: I liked the use of the integrity error to see if the username already existed. It was also very clever to use a dictionary to pass values into the Jinja template, as that increased clarity.
+
+Grow: The repo structure is a bit messed up, the templates and static folders should be in the app folder along with the main python file. It may have also made it cleaner to have a separate python file with all of your database commands.
+
+Question: What was the reasoning behind using a with statement with the message flashing in the edit.html template?
+---------------------------------------------------
+
+---------------------------------------------------
+Team Chalice
+---------------------------------------------------
+Glow: Very nice file organization and font choice. I liked how you separated the Python files that interact with the database into user and story.
+
+Grow: Some repetitive code. You could combine registerauth and loginauth for a single function, as they have a lot of the same code/logic.
+
+Question: Why is Frankenstein so chonky?
+---------------------------------------------------
+
+---------------------------------------------------
+Team Bug Busters
+---------------------------------------------------
+Glow: Very clean and organized code. Also crazy CSS.
+
+Grow: A lot of f-string usage where placeholders can be used (to protect against SQL Injection attacks).
+
+Question: Could I interest you in for loops?
+---------------------------------------------------
+
+---------------------------------------------------
+Team Boolean Boas
+---------------------------------------------------
+Glow: Really good use of commenting and showing how you worked through the project.
+
+Grow: You have a static folder with CSS and then a CSS folder with CSS and then CSS in style tags in the HTML templates, which makes it a little unorganized. Also, many other groups created a separate python file for the site logic, which your code could benefit from (just a suggestion, it still looks extremely clean at the moment)
+
+Question: What was the purpose of setting the username to "?" in the home function in the main python file?
+---------------------------------------------------
+
+---------------------------------------------------
+Team SwedishFish
+---------------------------------------------------
+Glow: The aesthetic of the site is very pleasing and the button pop-ups are very satisfying to use. The code base is also very neat, and everything is sorted in a place that makes sense. You also made very good use of importing as "name," which cleaned up many database calls.
+
+Grow: Minor things like importing the database file and pycache. Also you can comment multiple lines using """, which would make testing the commented out code a bit easier. Also, you handled this for all the other pages, but the history page lacks a redirect when the user is not logged in, which leads to an error page.
+
+Question: What is the purpose of auth_reg and auth_login? Also, when you try to create an account with an existing user and then return to the login page, the URL includes a "return=×." How is that happening and is there a purpose?
+---------------------------------------------------
