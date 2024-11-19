@@ -25,6 +25,7 @@ time spent: 1.5
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">The Foundation</li>
+          <!--li for each navbar item, ul with class menu vertical for additional items when a navbar item is hovered over-->
           <li>
             <a href="#">Wood</a>
             <ul class="menu vertical">
@@ -38,6 +39,7 @@ time spent: 1.5
         </ul>
       </div>
       <div class="top-bar-right">
+        <!--Menu class puts the search and button features side by side-->
         <ul class="menu">
           <li><input type="search" placeholder="Search for Resources"></li>
           <li><button type="button" class="button">Search</button></li>
@@ -47,23 +49,48 @@ time spent: 1.5
 
     <!--Tab navigation with collapsing functionality-->
     <ul class="tabs" data-active-collapse="true" data-tabs id="collapsing-tabs">
-      <li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Tab Summary</a></li>
-      <li class="tabs-title"><a href="#panel2c">Meow</a></li>
-      <li class="tabs-title"><a href="#panel3c">Woof</a></li>
-      <li class="tabs-title"><a href="#panel4c">Boo</a></li>
+      <!-- is-active indicates that the specified tab will be open on page load; tab titles are first declared to make them show on the website-->
+      <li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Foundation Installation</a></li>
+      <li class="tabs-title"><a href="#panel2c">Tab Summary</a></li>
+      <li class="tabs-title"><a href="#panel3c">Meow</a></li>
+      <li class="tabs-title"><a href="#panel4c">Woof</a></li>
+      <li class="tabs-title"><a href="#panel5c">Boo</a></li>
     </ul>
     
     <div class="tabs-content" data-tabs-content="collapsing-tabs">
+      <!-- ID is the values without the # when declaring the tab titles (ex. #panel1c); This links them together-->
       <div class="tabs-panel is-active" id="panel1c">
-        <p>Tabs can be used to store and condense data. This includes text, images, forms, etc. This tab setup is collapsible, so if you click an open tab, it closes!</p>
+        <p>This Foundation Demo was created by importing CDN links. Enabling this for your own site is a very simple process.</p>
+        <ul>Add the following line of code to the header of your document (This enables the Foundation CSS): 
+          <pre>
+            &lt;link href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" rel="stylesheet"&gt;
+          </pre>
+        </ul>
+        <ul>
+          Add the following code to the bottom of your body, but still inside it (this enables the JS and imports JQuery, which Foundation uses for many of its functions):
+          <pre>
+            &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+            &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"&gt;&lt;/script&gt;
+            &lt;script&gt;
+              $(document).foundation();
+            &lt;/script&gt;
+          </pre>
+      </ul>
+
+      <p>To dive into how all this content was created, refer to our <a href="https://github.com/awong50/SOFTDEV/blob/38073726de8ef0e9e9e920d88889c4c53b39d51b/20_fd_metalmouths_wongA-liuB/index.html" target="_blank">code</a> or the <a href="https://get.foundation/sites/docs/installation.html" target="_blank">official documentation</a></p>
+      
       </div>
       <div class="tabs-panel" id="panel2c">
+        <p>Tabs can be used to store and condense data. This includes text, images, forms, etc. This tab setup is collapsible, so if you click an open tab, it closes!</p>
+      </div>
+      <!-- These tabs can also be used to show other features besides text, like images -->
+      <div class="tabs-panel" id="panel3c">
         <img src="https://c.tenor.com/Obrf_cJziQ8AAAAC/tenor.gif">
       </div>
-      <div class="tabs-panel" id="panel3c">
+      <div class="tabs-panel" id="panel4c">
         <img src="https://pbs.twimg.com/media/BvBzkm3CQAIN_-3.jpg">
       </div>
-      <div class="tabs-panel" id="panel4c">
+      <div class="tabs-panel" id="panel5c">
         <img src="https://media.gettyimages.com/id/1185552380/photo/scary-clown-mask.jpg?s=612x612&w=0&k=20&c=jugetaqVVoog-131Fzm34GeaXx6u2Nyastp8rLTIfuI=">
       </div>
     </div>
@@ -81,14 +108,16 @@ time spent: 1.5
     <!--Accordian to segment information in a nice way-->
     <ul class="accordion" data-accordion>
       <!--is-active makes it open on page refresh, otherwise closed-->
-      <li class="accordion-item is-active" data-accordion-item>   
+      <!-- Accordian title (of the entire group) is declared first in a href with class "accordian title", then following content is put inside a list with class "accordian-content"-->
+      <li class="accordion-item is-active" data-accordion-item>
+        <!-- Each accordian box is grouped inside a list with a class and includes a href with the title and a div with the content-->   
         <a href="#" class="accordion-title">Accordion Container</a>
         <div class="accordion-content" data-tab-content>
           <p>Accordian Containers can present information in a clean list format. Clicking on a tab expands it, and closes whatever tab is open.</p>
           <a href="https://get.foundation/sites/docs/accordion.html" target="_blank">To the Documentation</a>
         </div>
       </li>
-      <!--You can put anything inside these accordion items-->
+      <!--You can put anything inside these accordion items: This one shows a table inside it!-->
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title">Tables</a>
         <div class="accordion-content" data-tab-content>
@@ -97,6 +126,7 @@ time spent: 1.5
           <table>
             <thead>
               <tr>
+                <!-- Enables the control of the width size of each column-->
                 <th width="200">Lorem Type</th>
                 <th>Lorem Example</th>
                 <th width="150">Word Count</th>
@@ -141,26 +171,30 @@ time spent: 1.5
                     <input type="text" placeholder="Name">
                   </label>
                 </div>
+                <!-- Demonstrating text input -->
                 <div class="medium-6 cell">
                   <label>Enter your Email
                     <input type="text" placeholder="Email">
                   </label>
                 </div>
+                <!-- Demontrating Dropdown Selection -->
                 <div class="medium-2 cell">
                   <label>Homeroom
                     <select>
-                      <option value="husker">7AA</option>
-                      <option value="starbuck">7BB</option>
-                      <option value="hotdog">7GG</option>
+                      <option value="7AA">7AA</option>
+                      <option value="7BB">7BB</option>
+                      <option value="7GG">7GG</option>
                     </select>
                   </label>
                 </div>
+                <!-- Demonstrating number input with increase/decrease buttons -->
                 <div class="small-2 cell">
                   <label>
                     Desired GPA?
                     <input type="number" value="100">
                   </label>
                 </div>
+                <!-- Demonstrating single select from option choices displayed as multiple choice questions on a test-->
                 <div class="grid-x grid-padding-x">
                   <fieldset class="large-6 cell">
                     <legend>Choose Your Favorite Color</legend>
@@ -168,6 +202,7 @@ time spent: 1.5
                     <input type="radio" name="color" value="Blue" id="colorBlue"><label for="colorBlue">Blue</label>
                     <input type="radio" name="color" value="Yellow" id="colorYellow"><label for="colorYellow">Yellow</label>
                   </fieldset>
+                  <!-- Demonstrating checkbox (multiselecting things)-->
                   <fieldset class="large-5 cell">
                     <legend>Click all that apply</legend>
                     <input id="checkbox1" type="checkbox"><label for="checkbox1">Student</label>
@@ -175,6 +210,7 @@ time spent: 1.5
                     <input id="checkbox3" type="checkbox"><label for="checkbox3">Faculty</label>
                   </fieldset>
                 </div>
+                <!-- Demonstrating textarea-->
                 <div class="small-30 cell">
                   <label>
                     Reason for Grade Boost:
@@ -193,14 +229,18 @@ time spent: 1.5
         <a href="#" class="accordion-title">Pop Up Modals</a>
         <div class="accordion-content" data-tab-content>
           <p>Cool buttons that create pop ups upon clicking</p>
+          <!-- Class reveal to make it show when button is clicked-->
           <div class="reveal" id="exampleModal1" data-reveal>
             <h1>Awesome. I Have It.</h1>
+            <!-- Lead class gives the content styling (larger than paragraph, but smaller than headers)-->
             <p class="lead">Your couch. It is mine.</p>
             <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+            <!-- Close button -->
             <button class="close-button" data-close aria-label="Close reveal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <!-- The actual button-->
           <p><button class="button" data-open="exampleModal1">Suprise...</button></p>
           <a href="https://get.foundation/sites/docs/reveal.html" target="_blank">To the Documentation</a>
       </li>
@@ -209,12 +249,13 @@ time spent: 1.5
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title">Tooltips</a>
         <div class="accordion-content" data-tab-content>
+          <!-- Span object is used to support tooltips: aria-haspopup makes it recognize that it is interactive, tabindex makes the text focusable, title is the content inside the tooltip, data-position controls where the tooltip appears relative to the word, data-alignment controls how the text is formatted within the tooltip -->
           <p>This is useful for expanding on <span data-tooltip aria-haspopup="true" tabindex="1" title="Having hidden meaning; mystifying" data-toggle="tooltip" data-position="top" data-alignment="center">cryptic</span> words without making things ugly.</p>
           <p>The <span data-tooltip aria-haspopup="true" tabindex="1" title="Fancy word for a beetle." data-toggle="tooltip" data-position="top" data-alignment="center">scarabaeus</span> hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet.</p>
           <a href="https://get.foundation/sites/docs/tooltip.html" target="_blank">To the Documentation</a>
       </li>
 
-      <!--A mesh of many different buttons, sliders, and switches-->
+      <!--A mesh of many different buttons, sliders, and switches; Each one is determined by what the class is-->
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title">Control Buttons</a>
         <div class="accordion-content" data-tab-content>
