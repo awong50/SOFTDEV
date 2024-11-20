@@ -28,6 +28,11 @@ time spent: 0.4
 * Tailwind paywall makes it less accessible than other CSS tools
 * There is a lack of built in JS functionality, so it would be supplemented by custom or other framework code
 
+### BOOTSTRAP
+* Are there cases where Bootstrap's CSS and JS conflict with other framworks like React and Vue?
+* Extremely flexible grid system, but a little overkill
+* Although a framework for beginners, the complex grid system can be difficult to debug and use
+
 
 ## q0
 
@@ -45,5 +50,8 @@ time spent: 0.4
 
 ### BOOTSTRAP
 * Team Jingle's README
+* Bootstrap Documentation: https://getbootstrap.com/docs/4.1/getting-started/introduction/ 
 
 ## q1:
+
+I prefer the Tailwind framework because the spacing and coloring is more customizable and gives a bit more freedom in design choice. In addition, there are more specific classes in tailwind that allow you to control more finer elements (the hover effect and color for buttons for instance). In addition, the overall style of Tailwind feels cleaner and more eye-pleasing than Foundation or Bootstrap. The only downside to Tailwind is a lack of prebuilt JS, but that can easily be supplemented due to its high compatability with other frameworks. It also allows for more freedom in script choices. 
