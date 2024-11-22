@@ -6,8 +6,7 @@ Mediastack provides developers a way to access news data from thousands of globa
 
 
 
-### Pain factor: _
-2
+### Pain factor: 1
 
 ### Key Provisioning:     
 
