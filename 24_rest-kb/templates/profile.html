@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            border-radius: 10px;
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            color: #34495e;
+            margin: 5px 0;
+        }
+        .token {
+            word-break: break-all;
+        }
+        .recent-track img {
+            border-radius: 10px;
+            max-width: 100%;
+            margin: 10px 0;
+        }
+        .playlists {
+            margin-top: 20px;
+        }
+        .playlists img {
+            border-radius: 5px;
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        .playlist {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .playlist a {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ name }}</h1>
+        {% if profile_pic %}
+        <img src="{{ profile_pic }}" alt="Profile Picture">
+        {% else %}
+        <p>No profile picture available</p>
+        {% endif %}
+        <h3>Session Details</h3>
+        <p><strong>Access Token:</strong></p>
+        <p class="token">{{ access_token }}</p>
+        <p><strong>Refresh Token:</strong></p>
+        <p class="token">{{ refresh_token }}</p>
+        <p><strong>Session Expires In:</strong> {{ expires_in }} seconds</p>
+        <hr>
+        <h3>Recently Played Track</h3>
+        {% if recent_track_name %}
+            <p><strong>Track:</strong> {{ recent_track_name }}</p>
+            <p><strong>Artist:</strong> {{ recent_track_artist }}</p>
+            {% if recent_track_image %}
+            <div class="recent-track">
+                <img src="{{ recent_track_image }}" alt="Track Image">
+            </div>
+            {% endif %}
+        {% else %}
+            <p>No recently played track available.</p>
+        {% endif %}
+        <hr>
+        <h3>Your Playlists</h3>
+        <div class="playlists">
+            {% if playlists %}
+                {% for playlist in playlists %}
+                <div class="playlist">
+                    {% if playlist.image %}
+                    <img src="{{ playlist.image }}" alt="{{ playlist.name }}">
+                    {% endif %}
+                    <p><a href="{{ playlist.url }}" target="_blank">{{ playlist.name }}</a></p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No playlists found.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
