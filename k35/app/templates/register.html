@@ -1,23 +1,18 @@
+<!--
+JAVA: Aidan Wong, Vedant Kothari
+SoftDev
+K35: Now Again for the First Time
+2024-03-12
+Time Spent: 2
+-->
+
 {% extends "base.html" %}
-{% block title %}Register{% endblock %}
 {% block content %}
-<h2>Register</h2>
-<form method="POST" action="{{ url_for('register') }}">
-    {{ form.hidden_tag() }}
-    <div>
-        {{ form.username.label }} {{ form.username(size=32) }}
-    </div>
-    <div>
-        {{ form.email.label }} {{ form.email(size=32) }}
-    </div>
-    <div>
-        {{ form.password.label }} {{ form.password(size=32) }}
-    </div>
-    <div>
-        {{ form.confirm_password.label }} {{ form.confirm_password(size=32) }}
-    </div>
-    <div>
-        {{ form.submit() }}
-    </div>
-</form>
+    <h2>Register</h2>
+    <form method="post">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
 {% endblock %}
