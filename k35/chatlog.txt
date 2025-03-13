@@ -838,3 +838,246 @@ Interaction 7
 (Highlighted line of code displaying story content): This should include all contributions and add punctuation if not at the end of each contribution
 
 (Did the action)
+
+------------------------------------------------------------------------------------------------
+
+Interaction 8
+
+Add CSS for my website make it look nice put it in the static css folder to work with flask
+
+Step 1: Add a CSS file
+
+    Create a basic CSS file with some starter styles. Here is an example of some basic CSS to improve the appearance:
+
+CSS
+
+/* static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+Public code references from 3 repositories
+
+    Save the CSS file as styles.css.
+
+Step 2: Place CSS file in the static/css folder
+
+    Place the newly created styles.css in the static/css folder. You should have the file path as static/css/styles.css.
+
+    Update your HTML templates to include the new CSS file. Here is an example of how to include the CSS file in the <head> section of your HTML template:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Your content goes here -->
+    </div>
+    <footer>
+        &copy; 2025 Your Website Name
+    </footer>
+</body>
+</html>
+
+Public code references from 6 repositories
+
+Follow-up Steps
+
+    Verify that the CSS file is being properly referenced and loaded in the HTML templates.
+    Test the website to see if the styles are showing up as expected.
+
+------------------------------------------------------------------------------------------------
+
+Interaction 9
+
+Center my login and registration pages and make it look nice
+
+To center your login and registration pages and make them look nice, you can add some CSS to your styles.css file and update your base.html to include the CSS file. Here are the steps:
+Step 1: Update base.html to include the CSS file
+
+Add the link to your CSS file in the <head> section of base.html:
+HTML
+
+<head>
+    <title>Collaborative Storytelling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+Public code references from 1 repository
+
+Step 2: Add CSS to center the forms
+
+Create or update the static/css/styles.css file with the following CSS to center the login and registration forms and make them look nice:
+CSS
+
+/* static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"],
+button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #555;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+Public code references from 3 repositories
+
+Step 3: Update the HTML templates
+
+Wrap the form content in a div with the class container in both login.html and register.html:
+login.html
+HTML
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Login</h2>
+    <form method="post">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+    <br>
+    <a href="/register"><button type="button">Register</button></a>
+</div>
+{% endblock %}
+
+Public code references from 1 repository
+
+register.html
+HTML
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Register</h2>
+    <form method="post">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</div>
+{% endblock %}
+
+Public code references from 5 repositories
+
+This will center the forms and give them a nicer appearance. Make sure to place the styles.css in the static/css folder.
+
+------------------------------------------------------------------------------------------------
+
+Interaction 10
+
+Make my view story  create story contribute and index page that shows the stories and stuff look nicer and adhere to the styling of every other page
+

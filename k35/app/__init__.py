@@ -102,7 +102,7 @@ def create_story():
 
 @app.route('/contribute/<story_title>', methods=['GET', 'POST'])
 def contribute(story_title):
-    with sqlite3.connect('database.db') as conn:
+    with sqlit1434e3.connect('database.db') as conn:
         c = conn.cursor()
         c.execute('SELECT id, content FROM stories WHERE title = ?', (story_title,))
         story = c.fetchone()
