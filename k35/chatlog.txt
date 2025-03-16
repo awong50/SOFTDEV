@@ -1081,3 +1081,550 @@ Interaction 10
 
 Make my view story  create story contribute and index page that shows the stories and stuff look nicer and adhere to the styling of every other page
 
+To make your "view story", "create story", "contribute", and "index" pages look nicer and adhere to the styling of every other page, you can add some additional CSS rules to your styles.css file. Here are some suggestions:
+
+Add styles for the main content areas of these pages.
+Ensure buttons and links are styled consistently.
+Add some spacing and layout adjustments for better readability.
+Here is an updated version of your styles.css file with these enhancements:
+
+/* static/css/styles.css */
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Centered Container */
+.container {
+    max-width: 450px;
+    width: 100%;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #444;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Buttons */
+input[type="submit"],
+button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: linear-gradient(135deg, #5b75e0, #9168d1);
+}
+
+/* Links */
+a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f8f9fd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    background: #e4e6f6;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+------------------------------------------------------------------------------------------------
+
+Interaction 11
+
+This CSS will help ensure that your pages have a consistent look and feel, with a clean and modern design. You can adjust the styles further based on your specific requirements and preferences.
+
+The page that shows the stories and stuff is all in one line and looks bad, maybe seperate css files
+
+To improve the appearance of your "view story", "create story", "contribute", and "index" pages, you can create separate CSS files for each page. This will help you manage styles more effectively and ensure each page adheres to the overall design.
+
+Global Styles (global.css) – Shared styles (typography, buttons, etc.).
+Forms & Auth Pages (auth.css) – Login & registration pages.
+Story Pages (stories.css) – Story display and contribution pages.
+Dashboard (dashboard.css) – User dashboard & story lists.
+
+1 Global Styles (global.css)
+This file will handle general styles used across all pages.
+
+css
+Copy
+Edit
+/* static/css/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #444;
+    font-weight: 600;
+}
+
+button, input[type="submit"] {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(135deg, #5b75e0, #9168d1);
+}
+
+a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+2 Forms & Authentication Pages (auth.css)
+This will style the login and registration pages.
+
+css
+Copy
+Edit
+/* static/css/auth.css */
+
+.auth-container {
+    max-width: 400px;
+    padding: 25px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+3 Story Pages (stories.css)
+Styles for viewing and contributing to stories.
+
+css
+Copy
+Edit
+/* static/css/stories.css */
+
+.story-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.story-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.story-content {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contribution-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+ul.contributions {
+    list-style: none;
+    padding: 0;
+}
+
+ul.contributions li {
+    background: #f8f9fd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+ul.contributions li:hover {
+    background: #e4e6f6;
+}
+4 Dashboard (dashboard.css)
+Improves the layout of the user’s dashboard.
+
+css
+Copy
+Edit
+/* static/css/dashboard.css */
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.dashboard-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fd;
+    border-radius: 8px;
+}
+
+.story-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.story-list li {
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.story-list li:hover {
+    background: #e4e6f6;
+}
+
+.story-list a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6e8efb;
+    text-decoration: none;
+}
+How to Link the Stylesheets
+Modify your base.html to include the necessary CSS files dynamically:
+
+html
+Copy
+Edit
+<head>
+    <title>Collaborative Storytelling</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+Then, in each template, extend base.html and specify which additional CSS file to use.
+
+For auth pages (login/register):
+
+html
+Copy
+Edit
+{% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+For story pages (viewing/contributing):
+
+html
+Copy
+Edit
+{% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stories.css') }}">
+{% endblock %}
+For dashboard:
+
+html
+Copy
+Edit
+{% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+------------------------------------------------------------------------------------------------
+
+Interaction 12
+
+Center all content in the middle of screen
+
+To center all content in the middle of the screen, update your global.css file with the following changes:
+
+/* static/css/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+}
+
+.container, 
+.auth-container, 
+.story-container, 
+.dashboard-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Ensure forms and lists are centered */
+form, .story-list, .contribution-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Set width limits for form fields */
+input[type="text"], 
+input[type="password"], 
+textarea {
+    width: 80%; /* Makes fields not too wide */
+    max-width: 500px;
+}
+
+------------------------------------------------------------------------------------------------
+
+Interaction 13
+
+Make the css of this page look nicer and show the contributors of each comment (referncing view.html)
+
+To improve the CSS of the view_story.html page and show the contributors of each comment, you can follow these steps:
+
+Create a new CSS file specifically for the view_story.html page.
+Update the HTML to include the contributor's name for each comment.
+Apply the new CSS styles to the HTML file.
+1. Create a New CSS File
+Create a new CSS file named view-story.css in your css directory with the following content:
+
+@import url('styles.css');
+
+.main-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+.story-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.story-content {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contributions {
+    list-style: none;
+    padding: 0;
+}
+
+.contributions li {
+    background: #f8f9fd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.contributions li:hover {
+    background: #e4e6f6;
+}
+
+.contributor {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+2. Update the HTML
+Update your view_story.html file to include the contributor's name for each comment and link to the new CSS file:
+<!--
+JAVA: Aidan Wong, Vedant Kothari
+SoftDev
+K35: Now Again for the First Time
+2024-03-12
+Time Spent: 2
+-->
+
+{% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view-story.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <h2 class="story-title">{{ story_title }}</h2>
+    <p class="story-content">{{ story_content }}</p>
+    <h3>Contributions</h3>
+    <ul class="contributions">
+        {% for contribution in contributions %}
+            <li>
+                <span class="contributor">{{ contribution.contributor }}</span>
+                {{ contribution.text }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('landing_page') }}" class="btn btn-primary">Back to Dashboard</a>
+</div>
+{% endblock %}
+3. Update the Data Structure
+Ensure that the contributions data structure in your backend includes both the contributor's name and the text of the contribution. For example:
+contributions = [
+    {"contributor": "Alice", "text": "Great story!"},
+    {"contributor": "Bob", "text": "I enjoyed reading this."},
+    # Add more contributions as needed
+]
+With these changes, your view_story.html page should look nicer and display the contributors of each comment.
+

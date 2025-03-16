@@ -7,12 +7,22 @@ Time Spent: 2
 -->
 
 {% extends "base.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stories.css') }}">
+{% endblock %}
+
 {% block content %}
-    <h2>Contribute to "{{ story_title }}"</h2>
-    <p>Latest update: {{ latest_update }}</p>
-    <form method="post">
-        Contribution: <textarea name="contribution"></textarea><br>
-        <input type="submit" value="Contribute">
-    </form>
-    <a href="{{ url_for('landing_page') }}" class="btn btn-primary">Back to Dashboard</a>
+    <div class="contribute-container">
+        <h2>Contribute to "{{ story_title }}"</h2>
+        <p class="latest-update">Latest update: {{ latest_update }}</p>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="post">
+            <label for="contribution">Contribution:</label>
+            <textarea id="contribution" name="contribution"></textarea>
+            <input type="submit" value="Contribute">
+        </form>
+        <a href="{{ url_for('landing_page') }}" class="btn btn-primary">Back to Dashboard</a>
+    </div>
 {% endblock %}

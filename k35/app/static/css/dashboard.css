@@ -1,0 +1,88 @@
+/* static/css/dashboard.css */
+
+/* Center the entire dashboard */
+.dashboard-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 25px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything */
+    margin: 50px auto; /* Ensure centering */
+}
+
+/* Center each section */
+.dashboard-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f8f9fd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the story list */
+.story-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Ensures list items are centered */
+}
+
+/* Style individual list items */
+.story-list li {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.story-list li:hover {
+    background: #e4e6f6;
+}
+
+/* Style links */
+.story-list a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6e8efb;
+    text-decoration: none;
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: #6e8efb;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #5a7de5;
+}
+
+.btn-danger {
+    background: #ff4d4d;
+}
+
+.btn-danger:hover {
+    background: #cc0000;
+}

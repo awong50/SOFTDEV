@@ -9,11 +9,14 @@ Time Spent: 2
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Collaborative Storytelling</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>StoryVerse </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <h1>Collaborative Storytelling</h1>
+    <div style="text-align: center;">
+        <h1>StoryVerse </h1>
+    </div>
     {% block content %}{% endblock %}
 </body>
 </html>

@@ -102,7 +102,8 @@ def create_story():
 
 @app.route('/contribute/<story_title>', methods=['GET', 'POST'])
 def contribute(story_title):
-    with sqlit1434e3.connect('database.db') as conn:
+    error = None
+    with sqlite3.connect('database.db') as conn:
         c = conn.cursor()
         c.execute('SELECT id, content FROM stories WHERE title = ?', (story_title,))
         story = c.fetchone()
@@ -119,15 +120,18 @@ def contribute(story_title):
             latest_update = latest_contribution[0]
 
     if request.method == 'POST':
-        contribution = request.form['contribution']
-        with sqlite3.connect('database.db') as conn:
-            c = conn.cursor()
-            c.execute('INSERT INTO contributions (story_id, username, contribution) VALUES (?, ?, ?)', (story_id, session['username'], contribution))
-            c.execute('UPDATE stories SET content = content || " " || ? WHERE id = ?', (contribution, story_id))
-            conn.commit()
-        return redirect(url_for('landing_page'))
+        contribution = request.form['contribution'].strip()
+        if not contribution:
+            error = "Contribution cannot be empty."
+        else:
+            with sqlite3.connect('database.db') as conn:
+                c = conn.cursor()
+                c.execute('INSERT INTO contributions (story_id, username, contribution) VALUES (?, ?, ?)', (story_id, session['username'], contribution))
+                c.execute('UPDATE stories SET content = content || " " || ? WHERE id = ?', (contribution, story_id))
+                conn.commit()
+            return redirect(url_for('landing_page'))
 
-    return render_template('contribute.html', story_title=story_title, latest_update=latest_update)
+    return render_template('contribute.html', story_title=story_title, latest_update=latest_update, error=error)
 
 @app.route('/story/<story_title>')
 def view_story(story_title):
@@ -137,10 +141,14 @@ def view_story(story_title):
         story = c.fetchone()
         if not story:
             return redirect(url_for('landing_page'))
-        contributions = [row[0] for row in c.execute('SELECT contribution FROM contributions WHERE story_id = (SELECT id FROM stories WHERE title = ?) ORDER BY id', (story_title,))]
-        story_content = " ".join([contribution if contribution[-1] in '.!?;' else contribution + '.' for contribution in contributions])
-        c.execute('SELECT contribution FROM contributions WHERE story_id = (SELECT id FROM stories WHERE title = ?) ORDER BY id', (story_title,))
-        contributions = [row[0] for row in c.fetchall()]
+        c.execute('''
+            SELECT username, contribution 
+            FROM contributions 
+            WHERE story_id = (SELECT id FROM stories WHERE title = ?) 
+            ORDER BY id
+        ''', (story_title,))
+        contributions = [{"contributor": row[0], "text": row[1]} for row in c.fetchall()]
+        story_content = " ".join([contribution["text"] if contribution["text"][-1] in '.!?;' else contribution["text"] + '.' for contribution in contributions])
     return render_template('view_story.html', story_title=story_title, story_content=story_content, contributions=contributions)
 
 if __name__ == '__main__':
