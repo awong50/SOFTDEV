@@ -59,7 +59,7 @@ $ git clone git@github.com:awong50/SOFTDEV.git
 4. Navigate to project directory
 
 ```
-$ cd PATH/TO/SOFTDEV/k35
+$ cd PATH/TO/SOFTDEV/35_outsource
 ```
 
 5. Install dependencies
@@ -73,7 +73,7 @@ $ pip install -r requirements.txt
 1. Navigate to project directory:
 
 ```
-$ cd PATH/TO/SOFTDEV/k35
+$ cd PATH/TO/SOFTDEV/35_outsource
 ```
  
 2. Navigate to 'app' directory
