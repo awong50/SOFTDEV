@@ -1,0 +1,57 @@
+@import url('styles.css');
+
+.main-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+.story-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.story-content {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.contributions {
+    list-style: none;
+    padding: 0;
+}
+
+.contributions li {
+    background: #f8f9fd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.contributions li:hover {
+    background: #e4e6f6;
+}
+
+.contributor {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

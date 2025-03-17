@@ -1,0 +1,77 @@
+/* static/css/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+form, .story-list, .contribution-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], 
+input[type="password"], 
+textarea {
+    width: 80%; /* Makes fields not too wide */
+    max-width: 500px;
+}
+
+.container, 
+.auth-container, 
+.story-container, 
+.dashboard-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #444;
+    font-weight: 600;
+}
+
+button, input[type="submit"] {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(135deg, #5b75e0, #9168d1);
+}
+
+a {
+    color: #6e8efb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
