@@ -1,4 +1,5 @@
 Plan:
-1. No domains
-2. Run through guide on PMVK's computer
+1. Ignore domain name creation for steps 1-5 of the DigitalOcean tutorial
+2. Follow the steps while taking notes on PM VK's machine first
 3. Repeat for other Devos
+4. (optional) Create a domain name and complete steps 6-7 on the DigitalOcean tutorial
